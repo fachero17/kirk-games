@@ -1,0 +1,216 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #141414;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 28% 53% 19%;
+    display: grid;
+    background-color: #272727;
+}
+.logo{
+    padding: 10px;
+    height: 40px;
+}
+.texto-header{
+    color: #fff;
+    font-size: 30px;
+    margin: 15px 0 0 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2px;
+}
+.busqueda{
+    display: flex;
+    align-items: center;
+}
+.buscador{
+    border: #fff solid 1px;
+    border-radius: 10px;
+    padding: 8px;
+    width: 500px;
+    background-color: #272727;
+    color: white;
+}
+.boton_de_buscar{
+    width: 19px;
+    height: 19px;
+    background-color:#272727;
+    border: #fff solid 1px;
+    border-radius: 10px;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+}
+.botones_login{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    padding: 10px 15px;
+}
+.login_button{
+    padding: 6px 10px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.login_button:hover{
+    background-color: #D26415;
+    color: white;
+}
+.registro_button{
+    padding: 6px 15px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.registro_button:hover{
+    background-color: #D26415;
+    border: #fff solid 1px;
+}
+.imagen_notificacion{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.campana{
+    height: 20px;
+    width: 20px;
+}
+
+.body_mainpage{
+    display: grid;
+    grid-template-columns: 78% 22%;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+.main_content{
+    flex: 3;
+}
+.sidebar{
+    position: sticky;
+    top: 10px; /* Espacio desde la parte superior de la ventana */
+    align-self: flex-start; /* Mantiene la posición inicial del sticky */
+    background-color: #222;
+    padding: 15px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 10px;
+}
+.info_directo {
+    display: flex;
+    align-items: center;
+    margin-left: 260px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    margin-right: 235px;
+    margin-bottom: 3px;
+}
+.canal {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    gap: 20px;
+    border-top: 2px solid white;
+}
+
+.canal_logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.canal h3 {
+    margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+        position: static; /* Cambia el sticky a normal en pantallas pequeñas */
+    }
+}
+
+.video_container{
+    display: flex;
+    align-items: center;
+    width: 560px;
+    height: 315px;
+    border-radius: 15px;
+    justify-content: center;
+    margin-left: 200px;
+}
+.subtitulos{
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.titulos{
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+}
+.negrita{
+    color: #D26415;
+}
+footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #272727;
+    color: #fff;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #D26415;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.derechos {
+    padding-top: 20px;
+}
+.footer a {
+    color: #D26415;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}

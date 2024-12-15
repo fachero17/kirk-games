@@ -1,0 +1,269 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #141414;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 28% 53% 19%;
+    display: grid;
+    background-color: #272727;
+}
+.logo{
+    padding: 10px;
+    height: 40px;
+}
+.texto-header{
+    color: #fff;
+    font-size: 30px;
+    margin: 15px 0 0 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2px;
+}
+.busqueda{
+    display: flex;
+    align-items: center;
+}
+.buscador{
+    border: #fff solid 1px;
+    border-radius: 10px;
+    padding: 8px;
+    width: 500px;
+    background-color: #272727;
+    color: white;
+}
+.boton_de_buscar{
+    width: 19px;
+    height: 19px;
+    background-color:#272727;
+    border: #fff solid 1px;
+    border-radius: 10px;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+}
+.botones_login{
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    padding: 10px 15px;
+}
+.login_button{
+    padding: 6px 10px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.login_button:hover{
+    background-color: #D26415;
+    color: white;
+}
+.registro_button{
+    padding: 6px 15px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.registro_button:hover{
+    background-color: #D26415;
+    border: #fff solid 1px;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+.main_contenido{
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px 20px 0 20px;
+    background-color: #222;
+    height: 560px;
+    border-radius: 10px;
+}
+.mid_container{
+    flex: 5;
+    padding: 0 20px ;
+}
+.video_en_vivo{
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.titulo_en_vivo{
+    font-size: 20px;
+    margin-left: 15px;
+    color: red;
+    text-transform: uppercase;
+}
+video{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.sidebar {
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+    flex: 1.5;
+    background-color: #222;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+}
+.chat_container {
+    display: flex;
+    flex-direction: column;
+    height: 560px;
+}
+.chat_messages {
+    overflow: hidden;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 430px;
+}
+.chat_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+.send_button{
+    padding: 6px 10px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #272727;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+.input_message{
+    border-radius: 10px;
+    padding: 8px;
+    
+    background-color: #272727;
+    color: white;
+}
+.mensaje{
+    background-color: #333;
+    padding: 6px 10px;
+    border-radius: 7px;
+    border: white solid 1px;
+    color: #fff;
+}
+.chat_vivo{
+    font-size: 20px;
+    margin-left: 15px;
+}
+.perfil_directo{
+    display: grid;
+    grid-template-columns: 7% 15% 52% 10% 10%;
+    gap: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+.channel_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.channel_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 10px;
+}
+.descripcion{
+    text-align: left;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.seguir{
+    margin: auto;
+    padding: 7px 10px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #D26415;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.suscribirse{
+    margin: auto;
+    padding: 7px 10px;
+    border: white solid 1px;
+    border-radius: 7px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #272727;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+}
+.canal {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    gap: 20px;
+    border-top: 2px solid white;
+}
+
+.canal_logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.canal h3 {
+    margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+        position: static; /* Cambia el sticky a normal en pantallas pequeñas */
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirk - Sin Conexión</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0f0f0f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0.5em 0;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 0.5em 0;
+            color: #aaa;
+        }
+
+        .retry-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #D26415;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .retry-button:hover {
+            background-color: #222;
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="/imagenes.main_page/logo.png" alt="kirk games logo">
+    <h1>¡Ups! Sin Conexión</h1>
+    <p>Parece que no tienes conexión a internet. Por favor, verifica tu conexión e intenta nuevamente.</p>
+    <button class="retry-button" onclick="window.location.reload();">Reintentar</button>
+</body>
+</html>

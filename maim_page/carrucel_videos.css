@@ -1,0 +1,68 @@
+.carousel_container {
+    position: relative;
+    width: 90%; /* Ajusta el ancho del carrusel */
+    margin: auto;
+    overflow: hidden; /* Oculta los elementos fuera del área visible */
+}
+
+/* Carrusel (fila de elementos) */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animación suave */
+    will-change: transform; /* Optimización de rendimiento */
+}
+
+/* Elementos individuales del carrusel */
+.video_item {
+    flex: 0 0 250px; /* Cada elemento ocupa 250px de ancho */
+    margin-right: 25px; /* Espaciado entre los videos */
+    padding: 10px;
+}
+
+/* Estilo del video dentro del carrusel */
+.video_item video {
+    width: 100%; /* El video ocupa el ancho completo del contenedor */
+    height: auto;
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+}
+
+/* Botones de flecha */
+.flecha {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.8rem; 
+    cursor: pointer;
+    z-index: 1;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flecha izquierda */
+.flecha.izquierda {
+    left: 10px;
+}
+
+/* Flecha derecha */
+.flecha.derecha {
+    right: 10px;
+}
+
+/* Responsividad: Ajusta el tamaño de los elementos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .video_item {
+        flex: 0 0 200px; /* Reduce el ancho de los videos */
+    }
+
+    .flecha {
+        font-size: 1.5rem; /* Reduce el tamaño de los botones */
+    }
+}

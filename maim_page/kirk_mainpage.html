@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="kirk.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="videos.css">
+    <link rel="stylesheet" href="carrucel_videos.css">
+    <script src="../scripts/generalNumeroVizualizaciones.js" defer></script>
+    <script src="../scripts/moverCarrucelDeVideos.js" defer></script>
+    <script src="../scripts/redireccionarVideo.js" defer></script>
+    <script defer>
+        window.addEventListener('load', () => {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('../scripts/sw.js', {
+                    scope: '/'
+                }).then(registration => {
+                    console.log('SW registered:', registration);
+                }).catch(error => {
+                    console.log('SW registration failed:', error);
+                });
+            }
+        });
+    </script>
+       
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirk</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="../imagenes.main_page/logo.png" alt="kirk games logo" >
+        <form class="busqueda">
+            <input class="buscador" type="text" placeholder="Buscar">
+            <input class="boton_de_buscar" type="image" src="../imagenes.main_page/icono_buscqueda.png" alt="Buscar">
+        </form>
+
+        <div class="botones_login">
+            <label for="modal_toggle" class="login_button">Iniciar Sesion</label>
+        <input type="checkbox" id="modal_toggle" class="modal_toggle" hidden>
+        <div class="modal_overlay">
+            <div class="modal_login">
+                <div class="modal_content_login">
+                    <label for="modal_toggle" class="close_modal">✖</label>
+                    <h2 class="modal_h2">Iniciar Sesión en Kirk</h2>
+                    <form action="kirk_logeado.html" method="get">
+                        <p class="letra_modal"><b>Usuario</b></p>
+                        <input type="text" name="username" id="username" required>
+                        <p class="letra_modal"><b>Contraseña</b></p>
+                        <input type="password" required>
+                        <h5><a href="#" class="olvidar_contraseña">¿Olvidaste tu contraseña?</a></h5>
+                        <button type="submit"><b>Iniciar Sesion</b></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <label for="modal_toggle_registro" class="registro_button">Registrarme</label>
+    <input type="checkbox" id="modal_toggle_registro" class="modal_toggle_registro" hidden>
+    <div class="modal_overlay_registro">
+        <div class="modal_registro">
+            <div class="modal_content_registro">
+                <label for="modal_toggle_registro" class="close_modal_registro">✖</label>
+                <h2 class="modal_title_registro">Registrarse en Kirk</h2>
+                <form action="kirk_logeado.html">
+                    <p class="texto_registro"><b>Usuario</b></p>
+                    <input type="text" required>
+                    <p class="texto_registro"><b>Email</b></p>
+                    <input type="email" required>
+                    <p class="texto_registro"><b>Contraseña</b></p>
+                    <input type="password" required>
+                    <p class="texto_registro"><b>Confirmar Contraseña</b></p>
+                    <input type="password" required>
+                    <div class="terminos_container">
+                        <input type="checkbox" id="terminos" class="checkbox" required>
+                        <label for="terminos" class="terminos_condiciones">
+                            Al hacer clic en <b class="negrita">Crear Cuenta</b>, aceptas los términos y condiciones de Kirk y reconoces que se aplica nuestro <b class="negrita">Aviso de privacidad</b>.
+                        </label>
+                    </div>
+                    <button type="submit" class="boton_registro"><b>Crear Cuenta</b></button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+    </header>
+    
+    <div class="body_mainpage">
+        <main>
+            <section class="main_content">
+                <div class="en_vivo">
+                    <h2 class="titulos">Canales en <b class="negrita">VIVO</b></h2>
+                    <div class="video_container">
+                        <a href="kirk_video.html?v=illojuan" class="video_container">
+                            <video src="../videos/illojuan.mp4" autoplay muted loop></video>
+                        </a>
+                    </div>
+                    <p class="info_directo"><b class="negrita">Directo de Illojuan</b></p>
+                    <p class="info_directo">Unete al Directo!</p>
+                </div>
+                <section class="carruceles">
+                    <section class="canales_sugeridos">
+                        <h2 class="subtitulos"><b class="negrita">EN VIVO</b> que te pueden gustar</h2>
+                        <div class="carousel_container">
+                            <button class="flecha izquierda" onclick="moveCarousel('carousel',-1)">&#8249;</button>
+                            <div class="carousel" id="carousel">
+                                <a href="kirk_video.html?v=illojuan" class="video_item">
+                                    <video src="../videos/illojuan.mp4" autoplay muted loop></video>
+                                </a>
+                                <a href="kirk_video.html?v=rubius" class="video_item">
+                                    <video src="../videos/rubius.mp4" autoplay muted loop></video>
+                                </a>
+                                <a href="kirk_video.html?v=the grefg" class="video_item">
+                                    <video src="../videos/the grefg.mp4" autoplay muted loop></video>
+                                </a>
+                                <a href="kirk_video.html?v=elmariana" class="video_item">
+                                    <video src="../videos/el mariana.mp4" autoplay muted loop></video>
+                                </a>
+                                <a href="kirk_video.html?v=beniju" class="video_item">
+                                    <video src="../videos/beniju.mp4" autoplay muted loop></video>
+                                </a>
+                            </div>
+                            <button class="flecha derecha" onclick="moveCarousel('carousel',1)">&#8250;</button>
+                        </div>
+                    </section>
+                    
+                    
+                    <section class="canales_sugeridos">
+                            <h2 class="subtitulos"> Juegos de Movil</h2>
+                            <div class="carousel_container">
+                                <button class="flecha izquierda" onclick="moveCarousel('carousel2',-1)">&#8249;</button>
+                                <div class="carousel" id="carousel2">
+                                    <div class="carousel" id="carousel">
+                                        <a href="kirk_video.html?v=beniju" class="video_item">
+                                            <video src="../videos/beniju.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=kevinsito2" class="video_item">
+                                            <video src="../videos/kevinsito2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=trebor" class="video_item">
+                                            <video src="../videos/trebor.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=igrowan" class="video_item">
+                                            <video src="../videos/igrowan.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=kevinsito" class="video_item">
+                                            <video src="../videos/kevinsito.mp4" autoplay muted loop></video>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="flecha derecha" onclick="moveCarousel('carousel2',1)">&#8250;</button>
+                            </div>
+                    </section>
+
+                    <section class="canales_sugeridos">
+                            <h2 class="subtitulos"> Juegos de Deportes</h2>
+                            <div class="carousel_container">
+                                <button class="flecha izquierda" onclick="moveCarousel('carousel3',-1)">&#8249;</button>
+                                <div class="carousel" id="carousel3">
+                                    <div class="carousel" id="carousel">
+                                        <a href="kirk_video.html?v=djmario" class="video_item">
+                                            <video src="../videos/djmario.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=ampeter" class="video_item">
+                                            <video src="../videos/ampeter.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=the grefg" class="video_item">
+                                            <video src="../videos/the grefg2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=djmario2" class="video_item">
+                                            <video src="../videos/djmario2.mp4" autoplay muted loop></video>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="flecha derecha" onclick="moveCarousel('carousel3',1)">&#8250;</button>
+                            </div>
+                    </section>
+
+                    <section class="canales_sugeridos">
+                            <h2 class="subtitulos"> Juegos de Supervivencia</h2>
+                            <div class="carousel_container">
+                                <button class="flecha izquierda" onclick="moveCarousel('carousel4',-1)">&#8249;</button>
+                                <div class="carousel" id="carousel4">
+                                    <div class="carousel" id="carousel">
+                                        <a href="kirk_video.html?v=farfadox" class="video_item">
+                                            <video src="../videos/farfadox.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=fernanfloo" class="video_item">
+                                            <video src="../videos/fernanfloo.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=agustin51" class="video_item">
+                                            <video src="../videos/agustin51.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=lolito" class="video_item">
+                                            <video src="../videos/lolito.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=elmariana3" class="video_item">
+                                            <video src="../videos/el mariana3.mp4" autoplay muted loop></video>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="flecha derecha" onclick="moveCarousel('carousel4',1)">&#8250;</button>
+                            </div>
+                    </section>
+
+                    <section class="canales_sugeridos">
+                            <h2 class="subtitulos"> Juegos de Carreras</h2>
+                            <div class="carousel_container">
+                                <button class="flecha izquierda" onclick="moveCarousel('carousel5',-1)">&#8249;</button>
+                                <div class="carousel" id="carousel5">
+                                    <div class="carousel" id="carousel">
+                                        <a href="kirk_video.html?v=rubius" class="video_item">
+                                            <video src="../videos/rubius.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=polman" class="video_item">
+                                            <video src="../videos/polman.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=auron" class="video_item">
+                                            <video src="../videos/auron.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=danirep" class="video_item">
+                                            <video src="../videos/danirep.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=auron2" class="video_item">
+                                            <video src="../videos/auron2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=elmariana5" class="video_item">
+                                            <video src="../videos/el  mariana5.mp4" autoplay muted loop></video>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="flecha derecha" onclick="moveCarousel('carousel5',1)">&#8250;</button>
+                            </div>
+                    </section>
+
+                    <section class="canales_sugeridos">
+                            <h2 class="subtitulos"> Juegos de Terror</h2>
+                            <div class="carousel_container">
+                                <button class="flecha izquierda" onclick="moveCarousel('carousel6',-1)">&#8249;</button>
+                                <div class="carousel" id="carousel6">
+                                    <div class="carousel" id="carousel">
+                                        <a href="kirk_video.html?v=elmariana" class="video_item">
+                                            <video src="../videos/el mariana.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=juegagerman" class="video_item">
+                                            <video src="../videos/juegagerman.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=rubius2" class="video_item">
+                                            <video src="../videos/rubius2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=elmariana2" class="video_item">
+                                            <video src="../videos/el mariana2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=fernanfloo2" class="video_item">
+                                            <video src="../videos/fernanfloo2.mp4" autoplay muted loop></video>
+                                        </a>
+                                        <a href="kirk_video.html?v=elmariana4" class="video_item">
+                                            <video src="../videos/el mariana4.mp4" autoplay muted loop></video>
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="flecha derecha" onclick="moveCarousel('carousel6',1)">&#8250;</button>
+                            </div>
+                    </section>
+                </section>
+        </main>    
+        
+
+        <aside class="sidebar">
+            <h2>Canales Recomendados</h2>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/illojuan.png" alt="">
+                <h3>Illojuan</h3>
+                <h3 id="resultado1">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/Thegrefg.png" alt="">
+                <h3>The Grefg</h3>
+                <h3 id="resultado2">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/rubius.jpg" alt="">
+                <h3>Rubius</h3>
+                <h3 id="resultado3">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/Shadoune666.png" alt="">
+                <h3>Shadoune666</h3>
+                <h3 id="resultado4">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/farfadoxVEVO.png" alt="">
+                <h3>FarfadoxVEVO</h3>
+                <h3 id="resultado5">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/djmario.png" alt="">
+                <h3>DjMaRiiO</h3>
+                <h3 id="resultado6">k</h3>
+            </div>
+            <div class="canal">
+                <img class="canal_logo" src="../imagenes_perfil/agustin51.png" alt="">
+                <h3>agustin51</h3>
+                <h3 id="resultado7">k</h3>
+            </div>
+        </aside>
+    </div>
+    <footer class="footer">
+        <div>
+            <p class="derechos">Derechos reservados &copy; 2024</p>
+        </div>
+        <div>
+            <p>Contacto: e1752756823@live.uleam.edu.ec</p>
+            <p>Contacto: e1351654569@live.uleam.edu.ec</p>
+        </div>
+        <div>
+            <p>Redes Sociales: <a href="https://www.facebook.com">Facebook</a> | <a href="https://www.twitter.com">Twitter</a></p>
+            <p>Teléfono: +123 456 7890</p>
+        </div>
+    </footer>
+</html>

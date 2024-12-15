@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Transmisión</title>
+    <link rel="stylesheet" href="kirk_video.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="registro.css">
+    <script src="../scripts/mensajesRandom.js" defer></script>
+    <script src="../scripts/redireccionarVideo.js"defer></script>
+    <script src="../scripts/mostrarNombreCanal.js"></script>
+    <script src="../scripts/seguir.js" defer></script>
+    <script src="../scripts/enviar_mensaje.js" defer></script>
+</head>
+<body>
+    <header>
+        
+        <img class="logo" src="../imagenes.main_page/logo.png" alt="kirk games logo" >
+        <form class="busqueda">
+            <input class="buscador" type="text" placeholder="Buscar">
+            <input class="boton_de_buscar" type="image" src="../imagenes.main_page/icono_buscqueda.png" alt="Buscar">
+        </form>
+
+
+        <div class="botones_login">
+            <label for="modal_toggle" class="login_button">Iniciar Sesion</label>
+        <input type="checkbox" id="modal_toggle" class="modal_toggle" hidden>
+        <div class="modal_overlay">
+            <div class="modal_login">
+                <div class="modal_content_login">
+                    <label for="modal_toggle" class="close_modal">✖</label>
+                    <h2 class="modal_h2">Iniciar Sesión en Kirk</h2>
+                    <form action="kirk_logeado.html" method="get">
+                        <p class="letra_modal"><b>Usuario</b></p>
+                        <input type="text" name="username" id="username" required>
+                        <p class="letra_modal"><b>Contraseña</b></p>
+                        <input type="password" required>
+                        <h5><a href="#" class="olvidar_contraseña">¿Olvidaste tu contraseña?</a></h5>
+                        <button type="submit"><b>Iniciar Sesion</b></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <label for="modal_toggle_registro" class="registro_button">Registrarme</label>
+    <input type="checkbox" id="modal_toggle_registro" class="modal_toggle_registro" hidden>
+    <div class="modal_overlay_registro">
+        <div class="modal_registro">
+            <div class="modal_content_registro">
+                <label for="modal_toggle_registro" class="close_modal_registro">✖</label>
+                <h2 class="modal_title_registro">Registrarse en Kirk</h2>
+                <form action="kirk_logeado.html">
+                    <p class="texto_registro"><b>Usuario</b></p>
+                    <input type="text" required>
+                    <p class="texto_registro"><b>Email</b></p>
+                    <input type="email" required>
+                    <p class="texto_registro"><b>Contraseña</b></p>
+                    <input type="password" required>
+                    <p class="texto_registro"><b>Confirmar Contraseña</b></p>
+                    <input type="password" required>
+                    <div class="terminos_container">
+                        <input type="checkbox" id="terminos" class="checkbox" required>
+                        <label for="terminos" class="terminos_condiciones">
+                            Al hacer clic en <b class="negrita">Crear Cuenta</b>, aceptas los términos y condiciones de Kirk y reconoces que se aplica nuestro <b class="negrita">Aviso de privacidad</b>.
+                        </label>
+                    </div>
+                    <button type="submit" class="boton_registro"><b>Crear Cuenta</b></button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main_contenido">
+            <a href="kirk_mainpage.html">
+                <img class="flecha_atras" src="../imagenes.main_page/flecha_atras.png" alt="Flecha atrás">
+            </a>
+
+
+            <div class="canales_que_sigues">
+                <h2>Canales que sigues</h2>
+                <div class="canales">
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/illojuan.png" alt="">
+                        <h3>Illojuan</h3>
+                    </div>
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/Thegrefg.png" alt="">
+                        <h3>The Grefg</h3>
+                    </div>
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/rubius.jpg" alt="">
+                        <h3>Rubius</h3>
+                    </div>
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/Shadoune666.png" alt="">
+                        <h3>Shadoune666</h3>
+                    </div>
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/farfadoxVEVO.png" alt="">
+                        <h3>FarfadoxVEVO</h3>
+                    </div>
+                    <div class="canal">
+                        <img class="canal_logo" src="../imagenes_perfil/djmario.png" alt="">
+                        <h3>DjMaRiiO</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mid_container">
+            <div class="video_en_vivo">
+                <h2 class="titulo_en_vivo">En directo</h2>
+                <video id="mainVideo" autoplay loop>
+                </video>
+            </div>
+            <div class="perfil_directo">
+                <img id="channelImage" class="channel_avatar" alt="">
+                <h3 id="channelName"></h3>
+                <p class="descripcion">"Hola a todos, espero que estén teniendo un excelente día. Este es un espacio para desconectar, relajarse y disfrutar un rato juntos. No importa de dónde vengas o qué estés buscando, aquí siempre hay un lugar para ti. Ponte cómodo, comparte buena vibra y deja que este momento sea un respiro en tu día. ¡Gracias por estar aquí!"</p>
+                <button class="seguir"> Seguir </button>
+                <button class="suscribirse">Suscribirse</button>
+            </div>
+        </section>
+        
+        
+            <aside class="sidebar">
+                <div class="chat_container">
+                    <h2 class="chat_vivo">Chat en vivo</h2>
+                    <div class="chat_messages" id="chat_messages">
+                    </div>
+                    <div class="chat_input">
+                        <input class="mensaje" type="text" placeholder="Escribe un mensaje">
+                        <button class="send_button">Enviar</button>
+                    </div>
+                </div>
+            </aside>
+    </main>
+</body>
+</html>
